@@ -1,0 +1,210 @@
+$background: #1E2538;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Qanelas Regular';
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: $background;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 600px;
+    background: url(/public/images/bg_test.jpg) no-repeat center / cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.backdrop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(211, 156, 85, 0) 0%, rgba(30, 37, 56, 1) 90%);
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 20px;
+
+        & nav {
+            display: flex;
+            gap: 22px;
+
+            & a {
+                font-family: 'Qanelas Medium';
+                color: #fff;
+                text-decoration: 0;
+            }
+        }
+
+        .tools {
+            display: flex;
+            gap: 10px;
+
+            .search_btn {
+                background-color: #fff;
+                border: 0;
+                border-radius: 10px;
+                padding: 0px 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .login {
+                border: 0;
+                box-shadow: 0px 0px 15px 0px #4871FFCC;
+                background: #3657CB;
+                font-size: 16px;
+                font-weight: 700;
+                color: #fff;
+                padding: 13px 40px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .now_playing_section {
+        .now_playing_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            & h1 {
+                font-family: 'Qanelas Bold';
+                font-size: 60px;
+                font-weight: 900;
+            }
+
+            .hr {
+                height: 2px;
+                width: 50px;
+                background-color: #fff;
+            }
+
+            .genres_tabs {
+                display: flex;
+                gap: 20px;
+
+                .genre_tab {
+                    color: #979797;
+                    cursor: pointer;
+                }
+
+                .genre_tab_active {
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .now_playing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 33px 23px;
+
+            .movie_card {
+                position: relative;
+                cursor: pointer;
+
+                .movie_poster {
+                    border-radius: 10px;
+                }
+
+                .score {
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    padding: 3px 10px;
+                    border-radius: 5px;
+                    background-color: #89CB36;
+
+                    & span {
+                        font-size: 14px;
+                    }
+                }
+
+                .movie_name {
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                }
+
+                .genres {
+                    color: #F2F60F;
+                    font-family: 'Qanelas Thin';
+                }
+            }
+        }
+
+
+        .now_playing_show_more {
+            border: 2px solid #fff;
+            background: 0;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 30px auto;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .now_playing_show_more:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    .new_trailers {
+        margin-top: 50px;
+
+        & h1 {
+            font-family: 'Qanelas Bold';
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 60px;
+        }
+
+        .trailer_box {
+            width: 100%;
+            height: 650px;
+
+            & iframe {
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+                border: 0;
+            }
+        }
+
+        .trailer_name {
+            font-family: 'Qanelas Bold';
+            font-size: 44px;
+            font-weight: 900;
+            margin-top: 20px;
+        }
+    }
+}

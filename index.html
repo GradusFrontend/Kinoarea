@@ -1,15 +1,137 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <link rel="stylesheet" href="/public/fonts/qanelas-webfont/style.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="/style.scss">
+</head>
 
+<body>
+
+    <div class="backdrop"></div>
+    
+    <div class="wrap">
+        <header class="header">
+            <img src="/public/icons/logo.svg" alt="">
+
+            <nav>
+                <a href="#">Афиша</a>
+                <a href="#">Медиа</a>
+                <a href="#">Афиша</a>
+                <a href="#">Фильмы</a>
+                <a href="#">Актеры</a>
+                <a href="#">Новости</a>
+                <a href="#">Избранное</a>
+                <a href="#">Категории</a>
+            </nav>
+
+            <div class="tools">
+                <button class="search_btn"><img src="/public/icons/serch.svg" alt=""></button>
+                <button class="login">Войти</button>
+            </div>
+        </header>
+
+        <section class="now_playing_section">
+            <div class="now_playing_top">
+                <h1>Сейчас в кино</h1>
+                <div class="hr"></div>
+                <div class="genres_tabs">
+                    <h4 class="genre_tab_active">Все</h4>
+                    <h4 class="genre_tab">Боевеки</h4>
+                    <h4 class="genre_tab">Приключения</h4>
+                    <h4 class="genre_tab">Комедии</h4>
+                    <h4 class="genre_tab">Фантастика</h4>
+                    <h4 class="genre_tab">Триллеры</h4>
+                    <h4 class="genre_tab">Драма</h4>
+                </div>
+            </div>
+
+            <div class="now_playing">
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+            </div>
+
+            <center><button class="now_playing_show_more">Все новинки</button></center>
+        </section>
+
+        <section class="new_trailers">
+            <h1>Новые трейлеры</h1>
+
+            <div class="trailer_box">
+                <iframe src="https://www.youtube.com/embed/g3K9jNZu5Z0" allowfullscreen></iframe>
+            </div>
+            <div class="trailer_name">Attack on Titan</div>
+        </section>
+    </div>
 
     <script type="module" src="/main.js"></script>
-  </body>
+</body>
+
+
 </html>
