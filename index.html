@@ -13,7 +13,7 @@
 <body>
 
     <div class="backdrop"></div>
-    
+
     <div class="wrap">
         <header class="header">
             <img src="/public/icons/logo.svg" alt="">
@@ -51,70 +51,7 @@
             </div>
 
             <div class="now_playing">
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
-                <a class="movie_card_link">
-                    <div class="movie_card">
-                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
-                        <div class="score"><span>8.2</span></div>
-                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
-                        <p class="genres">Триллер, драма, криминал</p>
-                    </div>
-                </a>
+           
             </div>
 
             <center><button class="now_playing_show_more">Все новинки</button></center>
@@ -124,10 +61,155 @@
             <h1>Новые трейлеры</h1>
 
             <div class="trailer_box">
-                <iframe src="https://www.youtube.com/embed/g3K9jNZu5Z0" allowfullscreen></iframe>
+                <iframe class="trailer_src" src="https://www.youtube.com/embed/g3K9jNZu5Z0" allowfullscreen></iframe>
             </div>
-            <div class="trailer_name">Attack on Titan</div>
+            <div class="trailer_name" id="trailer_name">Attack on Titan</div>
+
+            <div class="trailers">
+                <div class="trailer_btn">
+                    <div class="trailer_backdrop">
+                        <div class="play_btn"></div>
+                    </div>
+                    <h3 class="trailer_name">Ubyuu ya teba</h3>
+                </div>
+            </div>
         </section>
+
+        <section class="popular_movies">
+            <div class="pop_top">
+                <h1>Популярные фильмы</h1>
+                <div class="hr"></div>
+                <div class="year_tabs">
+                    <h3 data-year="all" class="year_tab year_tab_active">Все время</h3>
+                    <h3 data-year="2024" class="year_tab">2024</h3>
+                    <h3 data-year="2023" class="year_tab">2023</h3>
+                    <h3 data-year="2022" class="year_tab">2022</h3>
+                    <h3 data-year="2021" class="year_tab">2021</h3>
+                    <h3 data-year="2020" class="year_tab">2020</h3>
+                    <h3 data-year="2019" class="year_tab">2019</h3>
+                </div>
+            </div>
+
+            <div class="pop_movies">
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="popular_persons">
+            <h1>Популярные персоны</h1>
+            <div class="persons">
+                <div class="person_block">
+                    <span class="top_person">1-e место</span>
+                    <h3 class="person_name">Джейсон Стейтем</h3>
+                    <h4 class="person_age">54 лет</h4>
+                </div>
+                <div class="person_block">
+                    <span class="top_person">1-e место</span>
+                    <h3 class="person_name">Джейсон Стейтем</h3>
+                    <h4 class="person_age">54 лет</h4>
+                </div>
+                <div class="other_persons_block">
+                    <div class="other_person">
+                        <div class="left">
+                            <h3 class="other_name">Тинто Брасс</h3>
+                            <div class="person_age">54 лет</div>
+                        </div>
+
+                        <span class="other_top">1-е место</span>
+                    </div>
+                    <div class="other_person">
+                        <div class="left">
+                            <h3 class="other_name">Тинто Брасс</h3>
+                            <div class="person_age">54 лет</div>
+                        </div>
+
+                        <span class="other_top">1-е место</span>
+                    </div>
+                    <div class="other_person">
+                        <div class="left">
+                            <h3 class="other_name">Тинто Брасс</h3>
+                            <div class="person_age">54 лет</div>
+                        </div>
+
+                        <span class="other_top">1-е место</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer_body">
+        <div class="wrap">
+            <section class="upcoming_movies">
+                <h1>Ожидаемые новинки</h1>
+
+                <div class="upcoming">
+                    <a class="movie_card_link">
+                        <div class="movie_card">
+                            <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                            <div class="score"><span>8.2</span></div>
+                            <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                            <p class="genres">Триллер, драма, криминал</p>
+                        </div>
+                    </a>
+                    <a class="movie_card_link">
+                        <div class="movie_card">
+                            <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                            <div class="score"><span>8.2</span></div>
+                            <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                            <p class="genres">Триллер, драма, криминал</p>
+                        </div>
+                    </a>
+                    <a class="movie_card_link">
+                        <div class="movie_card">
+                            <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                            <div class="score"><span>8.2</span></div>
+                            <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                            <p class="genres">Триллер, драма, криминал</p>
+                        </div>
+                    </a>
+                    <a class="movie_card_link">
+                        <div class="movie_card">
+                            <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                            <div class="score"><span>8.2</span></div>
+                            <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                            <p class="genres">Триллер, драма, криминал</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
     </div>
 
     <script type="module" src="/main.js"></script>

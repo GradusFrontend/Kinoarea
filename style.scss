@@ -17,7 +17,7 @@ body {
 }
 
 .backdrop {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -25,6 +25,7 @@ body {
     background: url(/public/images/bg_test.jpg) no-repeat center / cover;
     opacity: 0.5;
     z-index: -1;
+    transition: .5s ease;
 }
 
 .backdrop::after {
@@ -133,6 +134,8 @@ body {
 
                 .movie_poster {
                     border-radius: 10px;
+                    width: 100%;
+                    height: 400px;
                 }
 
                 .score {
@@ -205,6 +208,265 @@ body {
             font-size: 44px;
             font-weight: 900;
             margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .trailers {
+            display: flex;
+            gap: 20px;
+            overflow-x: scroll;
+
+            .trailer_btn {
+                cursor: pointer;
+
+                .trailer_backdrop {
+                    border-radius: 10px;
+                    width: 330px;
+                    height: 200px;
+                    background: url(/public/images/test_trailer.jpg) no-repeat center / cover;
+                    position: relative;
+
+                    .play_btn {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        translate: -50% -50%;
+
+                        width: 0;
+                        height: 0;
+                        border-top: 17px solid transparent;
+                        border-bottom: 17px solid transparent;
+                        border-left: 34px solid rgb(255, 255, 255);
+                    }
+                }
+
+                .trailer_name {
+                    font-size: 20px;
+                    font-family: 'Qanelas Regular';
+                }
+            }
+        }
+
+        .trailers::-webkit-scrollbar {
+            height: 8px;
+            position: absolute;
+            background-color: #1B2133;
+        }
+
+        .trailers::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            height: 8px;
+            background-color: rgba(52, 86, 255, 0.75);
+        }
+
+        .trailers::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            height: 8px;
+            background-color: #1B2133;
+        }
+    }
+
+    .popular_movies {
+        margin-top: 50px;
+
+        .pop_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            & h1 {
+                font-family: 'Qanelas Bold';
+                font-size: 50px;
+                font-weight: 900;
+            }
+
+            .hr {
+                height: 2px;
+                width: 50px;
+                background-color: #fff;
+            }
+
+            .year_tabs {
+                display: flex;
+                gap: 20px;
+
+                .year_tab {
+                    color: #979797;
+                    cursor: pointer;
+                }
+
+                .year_tab_active {
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .pop_movies {
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 33px 23px;
+
+            .movie_card {
+                position: relative;
+                cursor: pointer;
+
+                .movie_poster {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 400px;
+                }
+
+                .score {
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    padding: 3px 10px;
+                    border-radius: 5px;
+                    background-color: #89CB36;
+
+                    & span {
+                        font-size: 14px;
+                    }
+                }
+
+                .movie_name {
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                }
+
+                .genres {
+                    color: #F2F60F;
+                    font-family: 'Qanelas Thin';
+                }
+            }
+        }
+    }
+
+    .popular_persons {
+        margin-top: 40px;
+        margin-bottom: 80px;
+
+        & h1 {
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+
+        .persons {
+            margin-top: 20px;
+
+            display: flex;
+            gap: 20px;
+
+            .person_block, .other_persons_block {
+                width: 100%;
+                height: 350px;
+                border-radius: 10px;
+            }
+
+            .person_block {
+                background: url(/public/images/statham.jpg) no-repeat center / cover;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                padding: 0 0 10px 15px;
+                position: relative;
+
+                .top_person {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    color: #F2F60F;
+                    font-family: 'Qanelas Thin';
+                }
+
+                .person_age {
+                    font-family: 'Qanelas Thin';
+                    color: #F2F60F;
+                }
+            }
+
+            .other_persons_block {
+                background-color: #1B2133;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 30px;
+
+                .other_person {
+                    border-bottom: 2px solid #1E2538;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    .left {
+                        & h3 {
+                            margin-bottom: 7px;
+                        }
+                    }
+
+                    .other_top {
+                        color: #F2F60F;
+                        font-family: 'Qanelas Thin';
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer_body {
+    width: 100%;
+    background-color: #151A26;
+
+    .upcoming_movies {
+        
+        & h1 {
+            padding-top: 50px;
+            font-size: 50px;
+        }
+
+        .upcoming {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 33px 23px;
+
+            .movie_card {
+                position: relative;
+                cursor: pointer;
+
+                .movie_poster {
+                    border-radius: 10px;
+                }
+
+                .score {
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    padding: 3px 10px;
+                    border-radius: 5px;
+                    background-color: #89CB36;
+
+                    & span {
+                        font-size: 14px;
+                    }
+                }
+
+                .movie_name {
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                }
+
+                .genres {
+                    color: #F2F60F;
+                    font-family: 'Qanelas Thin';
+                }
+            }
         }
     }
 }
