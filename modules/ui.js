@@ -8,7 +8,9 @@ export function reloadMovies(arr, place) {
     for (let item of arr) {
         let block = document.createElement('a')
         block.classList.add('movie_card_link')
+        block.href = `/pages/movie/?id=${item.id}`
         place.append(block)
+
         block.innerHTML += `
         <div class="movie_card">
             <img class="movie_poster" src=https://image.tmdb.org/t/p/original${item.poster_path} alt="">
@@ -85,13 +87,151 @@ export function reloadTrailers(arr, place) {
             }
 
         })
-
-
 }
 
-/* <div class="trailer_btn">
-    <div class="trailer_btn">
-        <div class="play_btn"></div>
+export function topPersons(arr, arr2, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        let block = document.createElement('a')
+        block.classList.add('person_block')
+        block.style.background = item.profile_path ? `url(https://image.tmdb.org/t/p/original${item.profile_path}) no-repeat center / cover` : 'url(/public/images/not_found_photo_mini.jpg)'
+        place.prepend(block)
+        block.innerHTML += `
+        <span class="top_person">${arr.indexOf(item) + 1}-е место</span>
+        <h3 class="person_name">${item.name}</h3>
+        <h4 class="person_age">${item.popularity.toFixed(1)}</h4>
+        `
+    }
+
+    let blockOther = document.createElement('div')
+    blockOther.classList.add('other_persons_block')
+    place.append(blockOther)
+
+    let top = 3
+    for (let item of arr2) {
+        blockOther.innerHTML += `
+        <div class="other_person">
+        <div class="left">
+            <h3 class="other_name">${item.name}</h3>
+            <div class="person_age">${item.popularity.toFixed(1)}</div>
+        </div>
+
+        <span class="other_top">${top++}-е место</span>
+        </div>
+        `
+    }
+}
+
+export function reloadGenres(arr, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        let genre = document.createElement('h4')
+        genre.classList.add('genre_tab')
+        genre.dataset.genre = item.id
+        genre.innerHTML = item.name
+
+        place.append(genre)
+
+
+
+    }
+
+
+    let allGenre = document.createElement('h4')
+    allGenre.classList.add('genre_tab', 'genre_tab_active')
+    allGenre.innerHTML = 'все'
+    place.prepend(allGenre)
+    allGenre.dataset.genre = 'all'
+}
+
+export function reloadInfo(arr, place) {
+    place.innerHTML = ''
+
+    place.innerHTML = `
+    <div class="left_info">
+    <div class="info_item">
+        <h3 class="question">Год:</h3>
+        <h3 class="answer">${arr.release_date}</h3>
     </div>
-    <h3 class="trailer_name">Ubyuu ya teba</h3>
-</div> */
+    <div class="info_item">
+        <h3 class="question">Страна:</h3>
+        <h3 class="answer">${arr.production_countries[0].name}</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Слоган:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Режиссер:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Сценарий:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Продюссер:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Оператор:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Композитор:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+</div>
+
+<div class="right_info">
+    <div class="info_item">
+        <h3 class="question">Художник:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Монтаж:</h3>
+        <h3 class="answer"> - </h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Жанр:</h3>
+        <h3 class="answer">${arr.genres[0].name}, ${arr.genres[1].name}..</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Сборы в мире:</h3>
+        <h3 class="answer">${arr.revenue}$</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Премьера (мир):</h3>
+        <h3 class="answer">${arr.release_date}</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Премьера (РФ):</h3>
+        <h3 class="answer">${arr.release_date}</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Возраст:</h3>
+        <h3 class="answer">16+</h3>
+    </div>
+    <div class="info_item">
+        <h3 class="question">Время:</h3>
+        <h3 class="answer">${arr.runtime} мин.</h3>
+    </div>
+</div>
+    `
+}
+
+export function reloadRoles(arr, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        place.innerHTML += `
+        <a href="/pages/person/?id=${item.id}" class="role_item">
+        <img src=${item.profile_path ? `https://image.tmdb.org/t/p/original${item.profile_path}` : '/public/images/not_found_photo_mini.jpg'} alt="">
+        <h3 class="person_name">${item.name}</h3>
+        <h4 class="role_name">${item.character}</h4>
+        </a>
+        `
+    }
+}

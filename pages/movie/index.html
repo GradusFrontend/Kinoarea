@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+    <link rel="stylesheet" href="/public/fonts/qanelas-webfont/style.css">
+    <link rel="stylesheet" href="./style.scss">
+</head>
+
+<body>
+    <div class="backdrop"></div>
+
+    <div class="wrap">
+        <header class="header">
+            <img src="/public/icons/logo.svg" alt="">
+
+            <nav>
+                <a href="#">Афиша</a>
+                <a href="#">Медиа</a>
+                <a href="#">Афиша</a>
+                <a href="/">Фильмы</a>
+                <a href="#">Актеры</a>
+                <a href="#">Новости</a>
+                <a href="#">Избранное</a>
+                <a href="#">Категории</a>
+            </nav>
+
+            <div class="tools">
+                <button class="search_btn"><img src="/public/icons/serch.svg" alt=""></button>
+                <button class="login">Войти</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="top">
+
+                <img class="poster" src="/public/icons/test_card.jpg" alt="">
+
+                <div class="descriptions">
+                    <h1 class="movie_name">Побег из Претории</h1>
+                    <h3 class="movie_name_orig">Побег из Претории</h3>
+
+                    <div class="score">
+                        <span class="score_text">6.8</span>
+                    </div>
+                    <p class="desc">Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в
+                        «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план —
+                        это только первый шаг. Шаг второй — реализация плана.</p>
+
+                    <a href="#trailer_box" class="to_trailer">Смотреть трейлер</a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="raiting">
+                    <div class="fill"></div>
+                    <h4 class="percent">Рейтинг ожиданий 85%</h4>
+                </div>
+                <div class="to_favorite">
+                    <img src="/public/icons/heart 1.svg" alt="">
+                </div>
+            </div>
+
+            <div class="info">
+             
+            </div>
+        </main>
+
+        <section class="in_role">
+            <h1>В главных ролях:</h1>
+
+            <div class="in_role_grid">
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+                <a href="#" class="role_item">
+                    <img src="/public/images/role.jpg" alt="">
+                    <h3 class="person_name">Дениал Редклифф</h3>
+                    <h4 class="role_name">Том Жоский</h4>
+                </a>
+            </div>
+        </section>
+
+        <section class="trailer_section">
+            <h1>Трейлер фильма</h1>
+
+            <div class="trailer_box" id="trailer_box">
+                <iframe class="trailer_src" src="https://www.youtube.com/embed/g3K9jNZu5Z0" allowfullscreen></iframe>
+            </div>
+            <div class="trailer_name" id="trailer_name">Attack on Titan</div>
+        </section>
+
+        <section class="posters">
+            <h1>Постеры к фильму</h1>
+
+            <div class="posters_box">
+                <img src="/public/images/poster_test.jpg" alt="">
+                <img src="/public/images/poster_test.jpg" alt="">
+                <img src="/public/images/poster_test.jpg" alt="">
+                <img src="/public/images/poster_test.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie_images">
+            <h1>Кадры из фильма</h1>
+
+            <div class="images_gallery">
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+                <div class="photo"></div>
+            </div>
+        </section>
+
+        <section class="similar">
+            <h1>Похожие фильмы</h1>
+
+            <div class="similar_wrap">
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+                <a class="movie_card_link">
+                    <div class="movie_card">
+                        <img class="movie_poster" src="/public/icons/test_card.jpg" alt="">
+                        <div class="score"><span>8.2</span></div>
+                        <h3 class="movie_name">Хищные птицы: Потрясающая история Харли Квинн</h3>
+                        <p class="genres">Триллер, драма, криминал</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

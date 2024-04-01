@@ -114,11 +114,13 @@ body {
                 .genre_tab {
                     color: #979797;
                     cursor: pointer;
+                    transition: .4s ease;
                 }
 
                 .genre_tab_active {
                     color: #ffffff;
                     cursor: pointer;
+                    scale: 1.1;
                 }
             }
         }
@@ -295,11 +297,13 @@ body {
                 .year_tab {
                     color: #979797;
                     cursor: pointer;
+                    transition: .4s ease;
                 }
 
                 .year_tab_active {
                     color: #ffffff;
                     cursor: pointer;
+                    scale: 1.1;
                 }
             }
         }
@@ -380,13 +384,42 @@ body {
                     top: 10px;
                     left: 10px;
                     color: #F2F60F;
+                    z-index: 2;
                     font-family: 'Qanelas Thin';
                 }
 
                 .person_age {
                     font-family: 'Qanelas Thin';
                     color: #F2F60F;
+                    z-index: 2;
                 }
+
+                .person_name {
+                    z-index: 2;
+
+                }
+            }
+
+            .person_block::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 60%;
+                background: linear-gradient(0, #000 0%, #92666600 100%);
+                border-radius: 10px;
+
+            }
+            .person_block::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 30%;
+                border-radius: 10px;
+                background: linear-gradient(180deg, #000000be 0%, #92666600 100%);
             }
 
             .other_persons_block {
@@ -424,6 +457,7 @@ body {
     background-color: #151A26;
 
     .upcoming_movies {
+        padding: 50px;
         
         & h1 {
             padding-top: 50px;
@@ -442,6 +476,8 @@ body {
 
                 .movie_poster {
                     border-radius: 10px;
+                    width: 100%;
+                    height: 400px;
                 }
 
                 .score {
