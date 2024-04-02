@@ -72,6 +72,13 @@ body {
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
+                transition: .3s ease;
+            }
+
+
+            .search_btn:hover {
+                background-color: #c9ef72;
+                scale: 1.05;
             }
 
             .login {
@@ -365,7 +372,8 @@ body {
             display: flex;
             gap: 20px;
 
-            .person_block, .other_persons_block {
+            .person_block,
+            .other_persons_block {
                 width: 100%;
                 height: 350px;
                 border-radius: 10px;
@@ -411,6 +419,7 @@ body {
                 border-radius: 10px;
 
             }
+
             .person_block::before {
                 content: '';
                 position: absolute;
@@ -458,7 +467,7 @@ body {
 
     .upcoming_movies {
         padding: 50px;
-        
+
         & h1 {
             padding-top: 50px;
             font-size: 50px;
@@ -505,4 +514,231 @@ body {
             }
         }
     }
+}
+
+.search_wrap {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #151a26aa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+    .search_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+        padding: 10px;
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 10px;
+        height: fit-content;
+        position: relative;
+
+
+        .logo_serach {
+            background-color: #F2F60F;
+            border-radius: 7px;
+            padding: 12px 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & input {
+            border: 0;
+            outline: 0;
+            width: 80%;
+            font-size: 20px;
+            color: #000;
+        }
+    }
+
+    & button {
+        width: fit-content;
+        height: fit-content;
+        padding: 15px;
+        border-radius: 5px;
+        border: 0;
+        // margin-top: 20px;
+        background: 0;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        cursor: pointer;
+        // margin-left: 15px;
+        // text-align: center;
+        position: absolute;
+        top: 5px;
+        right: -60px;
+    }
+
+    .results {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 70%;
+        overflow-y: scroll;
+        text-decoration: none;
+        
+
+        .movies_results {
+            & h2 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .movie_res_wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .res_movie_card {
+                    text-decoration: none;
+                    padding: 15px 50px 15px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #1E2538;
+                    border-radius: 10px;
+                    height: 130px;
+
+                    .left_movie {
+                        display: flex;
+                        // align-items: center;
+                        gap: 16px;
+
+                        & img {
+                            border-radius: 5px;
+                            width: 80px;
+                        }
+
+                        .res_movie_info {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 5px;
+
+                            .res_movie_name {
+                                font-size: 18px;
+                            }
+                            .res_movie_name_orig {
+                                font-size: 16px;
+                                font-family: 'Qanelas Thin';
+                            }
+                            .res_movie_date {
+                                font-family: 'Qanelas Thin';
+                                font-size: 15px;
+                                color: #F2F60F;
+                            }
+                        } 
+                    }
+
+                    .res_movie_rate {
+                        height: fit-content;
+                        padding: 5px 14px ;
+                        border-radius: 5px;
+                        background-color: #89CB36;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .person_results {
+            & h2 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .person_res_wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .res_person_card {
+                    text-decoration: none;
+                    padding: 15px 50px 15px 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #1E2538;
+                    border-radius: 10px;
+                    height: 130px;
+
+                    .left_person {
+                        display: flex;
+                        // align-items: center;
+                        gap: 16px;
+
+                        & img {
+                            border-radius: 5px;
+                            width: 80px;
+                        }
+
+                        .res_person_info {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 5px;
+
+                            .res_person_name {
+                                font-size: 18px;
+                            }
+                            .res_person_name_orig {
+                                font-size: 16px;
+                                font-family: 'Qanelas Thin';
+                            }
+                            .res_person_job {
+                                font-family: 'Qanelas Thin';
+                                font-size: 15px;
+                                color: #F2F60F;
+                            }
+                        } 
+                    }
+
+                    .res_person_rate {
+                        height: fit-content;
+                        padding: 5px 14px ;
+                        border-radius: 5px;
+                        background-color: #89CB36;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .results::-webkit-scrollbar {
+        // height: 8px;
+        width: 10px;
+        position: absolute;
+        background-color: #1B2133;
+    }
+
+    .results::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        // height: 8px;
+        width: 12px;
+        background-color: rgba(52, 86, 255, 0.75);
+    }
+
+    .results::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        // height: 8px;
+        width: 10px;
+        background-color: #1B2133;
+    }
+}
+
+.invisible {
+    display: none;
+    opacity: 0;
 }

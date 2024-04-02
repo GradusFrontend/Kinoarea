@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getData } from "./modules/http";
-import { reloadMovies, reloadTrailers, topPersons, reloadGenres } from "./modules/ui";
+import { reloadMovies, reloadTrailers, topPersons, reloadGenres, reloadMovieRes, reloadPersonRes } from "./modules/ui";
 
 const now_playing = document.querySelector('.now_playing')
 const now_playing_show_more = document.querySelector('.now_playing_show_more')
@@ -111,5 +111,46 @@ getData('https://api.themoviedb.org/3/movie/upcoming?language=ru-RU&page=1')
     .then(res => {
         reloadMovies(res.data.results.slice(0, 4), upcoming_wrap)
     })
+
+
+//  searching
+const search_btn = document.querySelector('.search_btn')
+const search_wrap = document.querySelector('.search_wrap')
+const nav = document.querySelector('nav')
+const close_btn = document.querySelector('.close')
+const search_inp = document.querySelector('#search_inp')
+const movie_res_wrap = document.querySelector('.movie_res_wrap')
+const person_res_wrap = document.querySelector('.person_res_wrap')
+const body = document.body
+
+search_btn.onclick = () => {
+    search_btn.classList.add('invisible')
+    nav.classList.add('invisible')
+    search_wrap.classList.remove('invisible')
+    body.style.overflowY = 'hidden'
+}
+
+close_btn.onclick = () => {
+    search_btn.classList.remove('invisible')
+    nav.classList.remove('invisible')
+    search_wrap.classList.add('invisible')
+    body.style.overflowY = 'visible'
+}
+
+search_inp.onkeyup = (e) => {
+    let val = e.target.value
+    
+    getData(`https://api.themoviedb.org/3/search/movie?query=${val}&include_adult=false&language=ru-RU&page=1`)
+        .then(res => {
+            reloadMovieRes(res.data.results.slice(0, 5), movie_res_wrap)
+        })
+    getData(`https://api.themoviedb.org/3/search/person?query=${val}&include_adult=false&language=ru-RU&page=1`)
+        .then(res => {
+            reloadPersonRes(res.data.results.slice(0, 5), person_res_wrap)
+        })
+}
+
+
+
 
 

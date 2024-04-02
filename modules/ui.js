@@ -89,16 +89,18 @@ export function reloadTrailers(arr, place) {
         })
 }
 
+let topPlace = 2
 export function topPersons(arr, arr2, place) {
     place.innerHTML = ''
 
     for (let item of arr) {
         let block = document.createElement('a')
         block.classList.add('person_block')
+        block.href = `/pages/person/?id=${item.id}`
         block.style.background = item.profile_path ? `url(https://image.tmdb.org/t/p/original${item.profile_path}) no-repeat center / cover` : 'url(/public/images/not_found_photo_mini.jpg)'
         place.prepend(block)
         block.innerHTML += `
-        <span class="top_person">${arr.indexOf(item) + 1}-е место</span>
+        <span class="top_person">${topPlace--}-е место</span>
         <h3 class="person_name">${item.name}</h3>
         <h4 class="person_age">${item.popularity.toFixed(1)}</h4>
         `
@@ -111,14 +113,14 @@ export function topPersons(arr, arr2, place) {
     let top = 3
     for (let item of arr2) {
         blockOther.innerHTML += `
-        <div class="other_person">
+        <a href="/pages/person/?id=${item.id}" class="other_person">
         <div class="left">
             <h3 class="other_name">${item.name}</h3>
             <div class="person_age">${item.popularity.toFixed(1)}</div>
         </div>
 
         <span class="other_top">${top++}-е место</span>
-        </div>
+        </a>
         `
     }
 }
@@ -231,6 +233,83 @@ export function reloadRoles(arr, place) {
         <img src=${item.profile_path ? `https://image.tmdb.org/t/p/original${item.profile_path}` : '/public/images/not_found_photo_mini.jpg'} alt="">
         <h3 class="person_name">${item.name}</h3>
         <h4 class="role_name">${item.character}</h4>
+        </a>
+        `
+    }
+}
+
+export function reloadPersonMovies(arr, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        place.innerHTML += `
+        <div class="card">
+        <div class="card_left">
+            <img class="mini_poster" src="${item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : '/public/images/404poster.jpg'}" alt="">
+            <div class="left_text">
+                <h2>
+                    ${item.title}
+                </h2>
+                <p class="gray">${item.original_title}</p>
+                <p class="yellow">Боевик, триллер, драма, ...</p>
+                <p class="actor ">${item.character}</p>
+            </div>
+        </div>
+        <div class="card_right">
+            <div class="reyting">
+                <div class="item">
+                    <p>${+item.vote_average.toFixed(1)}</p>
+                    <span>TMDb</span>
+                </div>
+            </div>
+            <div class="btn">
+                <a href="/pages/movie/?id=${item.id}">
+                    <button>
+                        Карточка фильма
+                    </button>
+                </a>
+
+            </div>
+        </div>
+        </div>
+        `
+    }
+}
+
+export function reloadMovieRes(arr, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        place.innerHTML += `
+        <a href="/pages/movie/?id=${item.id}" class="res_movie_card">
+        <div class="left_movie">
+            <img src="${item.poster_path ? `https://image.tmdb.org/t/p/original${item.poster_path}` : '/public/images/404poster.jpg'}" alt="">
+            <div class="res_movie_info">
+                <h3 class="res_movie_name">${item.title}</h3>
+                <h4 class="res_movie_name_orig">${item.original_title}</h4>
+                <p class="res_movie_date">${item.release_date}</p>
+            </div>
+        </div>
+
+        <div class="res_movie_rate"><span class="res_movie_rate_text">${+item.vote_average.toFixed(1)}</span></div>
+        </a>
+        `
+    }
+}
+
+export function reloadPersonRes(arr, place) {
+    place.innerHTML = ''
+
+    for (let item of arr) {
+        place.innerHTML += `
+        <a href="/pages/person/?id=${item.id}" class="res_person_card">
+        <div class="left_person">
+            <img src="${item.profile_path ? `https://image.tmdb.org/t/p/original${item.profile_path}` : '/public/images/404poster.jpg'}" alt="">
+            <div class="res_person_info">
+                <h3 class="res_person_name">${item.name}</h3>
+                <p class="res_person_job">${item.known_for_department}</p>
+            </div>
+        </div>
         </a>
         `
     }
